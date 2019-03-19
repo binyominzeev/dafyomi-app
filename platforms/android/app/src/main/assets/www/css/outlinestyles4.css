@@ -1,0 +1,265 @@
+	/* v. 76.1 */
+
+
+
+
+
+    /*******************************************
+    THE DAF COMMENTARY - USED FOR POINTS, HALACHOS AND TOSFOS SECTIONS
+	as well as INSIGHTS, REVIEW (new format), DISCUSS
+    *******************************************/
+    /*COMMON CONTENT*/
+    div#content {
+        /*Includes selectors common to most tags*/
+        font-family:Arial,sans-serif;
+        font-size:1.1em;
+        font-style:normal;
+        font-weight:normal;
+        text-align:justify;
+        color:#000000;
+    }
+
+
+
+
+    /*#### STANDARD PARAGRAPH 'bas' ####*/
+    .bas	{
+        margin:3px 3px 0 4em;
+        font-size:1em;
+
+        line-height:125%;
+        text-indent:-4em;
+    }
+
+
+
+
+
+
+    /*Paragraph number*/
+    .nm {
+      /*  font-family:courier,monospace;        */
+		font-family: Arial, "Times New Roman";
+		width:3em;
+		color:#000080;
+    	text-align:right;
+        text-indent:0;  /*to cancel text indent from bas(defsub)*/
+        text-transform:lowercase;
+        font-size:1.1em;
+        font-weight:bold;
+	    display:inline-block;
+
+ }
+
+
+
+    /*Required to justify numbers like 16a) */
+    .nm span {
+        width:1.5em;
+       text-align:left;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+
+
+/*Colors the text before the colon */
+	.cl    {
+	font-weight:bold;
+	color:#FF0000;
+	}
+
+
+
+  /*#### MODIFIED LAYOUT 'indentsub' ####*/
+    .sub	{
+    margin-top:24px;
+   	font-weight:bold;
+	color:#000080;
+    }
+
+    .subject	{
+    margin-top:48px;
+	margin-bottom:24px;
+	font-weight:bold;
+ 	color:#000080;
+    font-size:1.2em;
+	}
+
+	    .subject .nm {
+        width:3em;
+        text-indent:0;
+        text-align:left;
+    }
+
+	    .subject .indexentry {
+	 display:none;
+            }
+            
+    .indentsub .deftext {
+        text-transform:uppercase;
+    	color:#006600;
+    }
+
+ /*   .sub .nm, .indentsub .ln {
+      	color:#000000;
+    }*/
+
+
+
+
+
+    /*#### MODIFIED LAYOUT 'indent' ####*/
+	.indent {
+        margin-left:4em;
+        text-indent:0;
+    }
+/*    .indent .nm {
+        width:4em;
+        text-indent:0;
+        font-weight:normal;
+
+        margin-left:-0.4em;
+    } */
+
+ /*   .indent .nm  {
+		color:#000000;
+    } */
+
+
+    /*#### MODIFIED LAYOUT 'indent1' ####*/
+	.indent1 {
+        margin-left:7em;
+        text-indent:-7.6em;
+    }
+
+    .indent1 .nm {
+        width:3em;
+        text-indent:0;
+        text-align:left;
+        margin-left:4em;
+    }
+
+    .indent1sk .deftext {
+        font-size:1.4em;
+        margin-top:24px;
+    }
+    /*#### MODIFIED LAYOUT 'indent2' ####*/
+/* I REMOVED THE FOLLOWING */
+/* BECAUSE THE LEADING SPACE WAS REMOVED */
+/* FROM AFTER THE PERIOD */
+/*    .indent2 {
+        margin:0 0 0 8em;
+        font-size:1.1em;
+        text-indent:-3.3em;
+    }
+    .indent2 .nmd {
+        font-weight:normal;
+        margin-left:0;
+    }     */
+
+
+
+
+
+/* I ADDED THE FOLLOWING INSTEAD*/
+
+	.indent2 {
+        margin-left:10em;
+        text-indent:-10.9em;
+    }
+
+    .indent2 .nm {
+        width:3em;
+        text-indent:0;
+        text-align:left;
+        margin-left:7em;
+
+    }
+
+
+
+
+
+
+/* I ADDED THE FOLLOWING */
+
+	.indent3 {
+        margin-left:13em;
+        text-indent:-16.4em;
+    }
+
+
+
+
+/* I ADDED THE FOLLOWING */
+    .indent3 .nm {
+        width:3em;
+        text-indent:0;
+        text-align:left;
+        font-weight:bold		;
+        margin-left:12em;
+    }
+
+
+
+
+
+
+
+
+
+    /*#### MODIFIED LAYOUT 'afindent' ####*/
+    .afindent	{
+        margin:24px 3px 0 4em;
+    }
+
+
+    .bbbline 	{
+        font-family:"Times New Roman",serif;
+        text-align:center;
+        font-size:1.4em;
+        font-weight:bold;
+        color:#000080;
+        margin-top:1em;
+		margin-bottom:1em;
+
+	}
+    p.spacer {
+        margin:0;
+        padding:0;
+        min-height:24px
+    }
+
+
+
+    /*******************************************
+    LINKS
+    *******************************************/
+
+div#content a {
+        color:blue;
+        text-decoration:none;
+    }
+    div#content a:link { }
+    div#content a:visited {color:#FF0066;}
+    div#content a:hover {text-decoration: underline;}
+    
+    div#content a:active {color:red;}
+    
+/* TILL HEERE    */
+
+
+
+
+
+
+    /*SEE OUTLINESTYLES4_TILLADARII5776*/
+
+
+
+/*EOF*/
+
+
+
