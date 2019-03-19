@@ -45,7 +45,9 @@ function shab_page_link (num, longnum) {
 }
 
 var swiper=new Swiper('.swiper-container', {
-	loop: true,
+//	loop: true,
+//	slidesPerView: 1,
+//	spaceBetween: 30,
 	onSlideChangeEnd: function (swiper) {
 		var num = swiper.realIndex;
 		var act = swiper.activeIndex;
@@ -53,14 +55,26 @@ var swiper=new Swiper('.swiper-container', {
 		var diff=act-prev;
 		
 		current_daf = current_daf + diff;
+
+		var lt=current_daf-1;
+		var rt=current_daf+1;
+		
+		var ltp=lt.pad(3);
+		var rtp=rt.pad(3);
 		
 		var padded=current_daf.pad(3);
 
 		if (num == 0) {
 			include('slide-0', 'masechet/berachos/br-ps-' + padded);
+			include('slide-1', 'masechet/berachos/br-ps-' + rtp);
+			include('slide-2', 'masechet/berachos/br-ps-' + ltp);
 		} else if (num == 1) {
+			include('slide-0', 'masechet/berachos/br-ps-' + ltp);
 			include('slide-1', 'masechet/berachos/br-ps-' + padded);
+			include('slide-2', 'masechet/berachos/br-ps-' + rtp);
 		} else if (num == 2) {
+			include('slide-0', 'masechet/berachos/br-ps-' + rtp);
+			include('slide-1', 'masechet/berachos/br-ps-' + ltp);
 			include('slide-2', 'masechet/berachos/br-ps-' + padded);
 		}
 		
