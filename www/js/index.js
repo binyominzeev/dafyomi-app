@@ -5,36 +5,30 @@ Number.prototype.pad = function(size) {
 }
 
 var current_daf=0;
+var next_slide_num=3;
+var first_daf=0;
+var last_daf=0;
 
 function ber_page_link (num) {
 	var longnum = num.pad(3);
 	current_daf=num;
 
-	include('slide-0', 'masechet/berachos/br-ps-' + longnum);
+	var lt=current_daf-1;
+	var rt=current_daf+1;
 	
-	var left1=num-1;
-	var left2=num-2;
-	var right1=num+1;
-	var right2=num+2;
+	var ltp=lt.pad(3);
+	var rtp=rt.pad(3);
 	
-	var left1long=left1.pad(3);
-	var left2long=left2.pad(3);
-	var right1long=right1.pad(3);
-	var right2long=right2.pad(3);
+	first_daf=lt;
+	last_daf=rt;
 
-//	include('left-slide', 'masechet/berachos/br-ps-' + left1long);
-//	include('right-slide', 'masechet/berachos/br-ps-' + right1long);
-
-//	include('left-1-slide', 'masechet/berachos/br-ps-' + left1long);
-//	include('left-2-slide', 'masechet/berachos/br-ps-' + left2long);
-//	include('right-1-slide', 'masechet/berachos/br-ps-' + right1long);
-//	include('right-2-slide', 'masechet/berachos/br-ps-' + right2long);
-
-	var num = swiper.realIndex;
-	var prev= 0;
-	var diff=num-prev;
+	var padded=current_daf.pad(3);
+	
+	include('slide-0', 'masechet/berachos/br-ps-' + ltp);
+	include('slide-1', 'masechet/berachos/br-ps-' + padded);
+	include('slide-2', 'masechet/berachos/br-ps-' + rtp);
 				
-	$('#titlebar').html('Dafyomi – Berachos ' + current_daf + ' (active: '+num+')');
+	$('#titlebar').html('Dafyomi – Berachos ' + current_daf);
 	backPage();
 }
 
@@ -45,9 +39,7 @@ function shab_page_link (num, longnum) {
 }
 
 var swiper=new Swiper('.swiper-container', {
-//	loop: true,
-//	slidesPerView: 1,
-//	spaceBetween: 30,
+	initialSlide: 1,
 	onSlideChangeEnd: function (swiper) {
 		var num = swiper.realIndex;
 		var act = swiper.activeIndex;
@@ -64,21 +56,25 @@ var swiper=new Swiper('.swiper-container', {
 		
 		var padded=current_daf.pad(3);
 
-		if (num == 0) {
-			include('slide-0', 'masechet/berachos/br-ps-' + padded);
-			include('slide-1', 'masechet/berachos/br-ps-' + rtp);
-			include('slide-2', 'masechet/berachos/br-ps-' + ltp);
-		} else if (num == 1) {
-			include('slide-0', 'masechet/berachos/br-ps-' + ltp);
-			include('slide-1', 'masechet/berachos/br-ps-' + padded);
-			include('slide-2', 'masechet/berachos/br-ps-' + rtp);
-		} else if (num == 2) {
-			include('slide-0', 'masechet/berachos/br-ps-' + rtp);
-			include('slide-1', 'masechet/berachos/br-ps-' + ltp);
-			include('slide-2', 'masechet/berachos/br-ps-' + padded);
+		if (swiper.isBeginning && first_daf > 2) {
+			swiper.prependSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
+			
+			first_daf--;
+			var ltp=first_daf.pad(3);
+			
+			include('slide-'+next_slide_num, 'masechet/berachos/br-ps-' + ltp);
+			next_slide_num++;
+		} else if (swiper.isEnd && last_daf < 64) {
+			swiper.appendSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
+			
+			last_daf++;
+			var rtp=last_daf.pad(3);
+			
+			include('slide-'+next_slide_num, 'masechet/berachos/br-ps-' + rtp);
+			next_slide_num++;
 		}
-		
-		$('#titlebar').html('Dafyomi – Berachos ' + current_daf + ' (active: '+num+')');
+
+		$('#titlebar').html('Dafyomi – Berachos ' + current_daf);
 	},
 });
 
