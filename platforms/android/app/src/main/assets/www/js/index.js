@@ -5,29 +5,54 @@ Number.prototype.pad = function(size) {
 }
 
 var current_daf=0;
+var next_slide_num=3;
+var first_daf=0;
+var last_daf=0;
+
+var masechet="";
+var masechet_show="";
+var masechet_size=0;
 
 function ber_page_link (num) {
-	var longnum = num.pad(3);
-	current_daf=num;
-
-	include('center-slide', 'masechet/berachos/br-ps-' + longnum);
+	masechet="berachos/br";
+	masechet_show="Berachos";
+	masechet_size=64;
 	
-	var left1=num-1;
-	var left2=num-2;
-	var right1=num+1;
-	var right2=num+2;
+	page_link(num);
+}
+
+function shab_page_link (num) {
+	masechet="shabbos/sh";
+	masechet_show="Shabbos";
+	masechet_size=157;
 	
-	var left1long=left1.pad(3);
-	var left2long=left2.pad(3);
-	var right1long=right1.pad(3);
-	var right2long=right2.pad(3);
+	page_link(num);
+}
 
-	include('left-1-slide', 'masechet/berachos/br-ps-' + left1long);
-	include('left-2-slide', 'masechet/berachos/br-ps-' + left2long);
-	include('right-1-slide', 'masechet/berachos/br-ps-' + right1long);
-	include('right-2-slide', 'masechet/berachos/br-ps-' + right2long);
+function page_link (num) {
+	current_daf = num;
 
-	$('#titlebar').html('Dafyomi – Berachos ' + num);
+	first_daf=current_daf-1;
+	last_daf=current_daf+1;
+	
+	var fdp=first_daf.pad(3);
+	var ldp=last_daf.pad(3);
+
+	var padded=current_daf.pad(3);
+	
+	swiper.removeAllSlides();
+	swiper.appendSlide([
+		'<div class="swiper-slide"><div id="slide-0" class="daf-slide"></div></div>',
+		'<div class="swiper-slide"><div id="slide-1" class="daf-slide"></div></div>',
+		'<div class="swiper-slide"><div id="slide-2" class="daf-slide"></div></div>',
+	]);
+	swiper.slideTo(1, 0, false);
+	
+	include('slide-0', 'masechet/'+masechet+'-ps-' + fdp);
+	include('slide-1', 'masechet/'+masechet+'-ps-' + padded);
+	include('slide-2', 'masechet/'+masechet+'-ps-' + ldp);
+				
+	$('#titlebar').html('Dafyomi – '+masechet_show+' ' + current_daf);
 	backPage();
 }
 
@@ -37,28 +62,38 @@ function shab_page_link (num, longnum) {
 	backPage();
 }
 
-var swiperH=new Swiper('.swiper-container-h', {
-	initialSlide: 2,
-	loop: true,
-	onSlideChangeEnd: function (swiperH) {
-		var num = swiperH.activeIndex;
-		var prev= swiperH.previousIndex;
-		var diff=num-prev;
+var swiper=new Swiper('.swiper-container', {
+	initialSlide: 1,
+	onSlideChangeEnd: function (swiper) {
+		var act = swiper.activeIndex;
+		var prev= swiper.previousIndex;
+		var diff=act-prev;
 		
-		current_daf = current_daf + diff
-		
-		$('#titlebar').html('Dafyomi – Berachos ' + current_daf);
+		current_daf = current_daf + diff;
+
+		var padded=current_daf.pad(3);
+
+		if (swiper.isBeginning && first_daf > 2) {
+			swiper.prependSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
+			
+			first_daf--;
+			var fdp=first_daf.pad(3);
+			
+			include('slide-'+next_slide_num, 'masechet/'+masechet+'-ps-' + fdp);
+			next_slide_num++;
+		} else if (swiper.isEnd && last_daf < masechet_size) {
+			swiper.appendSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
+			
+			last_daf++;
+			var ldp=last_daf.pad(3);
+			
+			include('slide-'+next_slide_num, 'masechet/'+masechet+'-ps-' + ldp);
+			next_slide_num++;
+		}
+
+		$('#titlebar').html('Dafyomi – '+masechet_show+' ' + current_daf);
 	},
 });
 
-var swiperV=new Swiper('.swiper-container-v', {
-	direction: 'vertical',
-	slidesPerView: 'auto',
-	freeMode: true,
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	},
-	mousewheel: true
-});
 
 
