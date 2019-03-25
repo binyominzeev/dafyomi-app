@@ -9,7 +9,7 @@ my $to_dir="/home/bz/cordova/dafyomi-app/www/masechet";
 
 # ========== initialize ==========
 
-#my @dirs=qw/kinim/;
+#my @dirs=qw/beitzah/;
 my @dirs=qw/azarah bbasra bechoros beitzah berachos bkama bmetzia chagigah chulin erchin eruvin gitin horayos kerisus kesuvos kidushin kinim makos megilah meilah menachos midos mkatan nazir nedarim nidah pesachim rhashanah sanhedrin shabbos shekalim shevuos sotah sukah taanis tamid temurah yevamos yoma zevachim/;
 
 my $dedication_1="<p class=[\"]*dedicationbox[\"]*>";
@@ -41,8 +41,12 @@ for my $dir (@dirs) {
 		if ($content=~/<div id="content">/) {
 			$content=$';
 			
-			$content=~/<\/div>/;
-			$content=$`;
+			if ($content =~ /<!-- End #content -->/) {
+				$content=$`;
+			} else {
+				$content=~/<\/div>/;
+				$content=$`;
+			}
 		} elsif ($content=~/$dedication_1/) {
 			# Currently: Kinim, Midot, Tamid
 			

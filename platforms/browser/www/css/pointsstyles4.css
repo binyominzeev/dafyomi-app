@@ -1,0 +1,411 @@
+	/* v. 78.1 */
+
+/* I CHANGED ALL defsub TO bas*/
+/* I CHANGED ALL nmd TO nm*/
+/* I CHANGED ALL lnd TO ln*/
+/* I ADDED	margin-bottom:1em; TO THE BBB LINE */
+
+
+	/*******************************************
+    THE POINT BY POINT SECTION
+    *******************************************/
+
+	/*COMMON CONTENT*/
+    div#content {
+        /*Includes selectors common to most tags*/
+        font-family:Arial,sans-serif;
+        font-size:1.1em;
+        font-style:normal;
+        font-weight:normal;
+        text-align:justify;
+        color:#000000;
+    }
+
+
+
+    /*#### STANDARD PARAGRAPH 'bas' ####*/
+    .bas	{
+        margin:3px 3px 0em 4em;
+		font-size:1em;
+        line-height:150%;
+        text-indent:-4em;
+    }
+
+
+
+    /*Paragraph number*/
+    .nm {
+      /*  font-family:courier,monospace;        */
+		font-family: "Arial";
+		width:2em;
+		color:#000080;
+    	text-align:right;
+        text-indent:0;  /*to cancel text indent from bas(defsub)*/
+        text-transform:lowercase;
+        font-size:1em;
+        font-weight:normal;
+        display:inline-block;
+
+ }
+
+
+
+    /*Required to justify numbers like 16a) */
+    .nm span {
+        width:1.5em;
+        text-align:left;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+
+
+    /*#### MODIFIED LAYOUT 'indentsub' ####*/
+    .sub	{
+    margin-top:24px;
+   	font-weight:bold;
+	color:#000080;
+    }
+
+    .subject	{
+    margin:48px 0em .5em 5em;
+	font-weight:bold;
+ 	color:#000080;
+    font-size:1.2em;;
+	}
+
+	    .subject .nm {
+        width:1.5em;
+        text-indent:0em;
+        text-align:left;
+   		   }
+
+
+    .indentsub .deftext {
+        text-transform:uppercase;
+    	color:#006600;
+    }
+
+ /*   .sub .nm, .indentsub .ln {
+      	color:#000000;
+    }*/
+
+
+
+
+
+    /*#### MODIFIED LAYOUT 'indent' ####
+	THIS STYLE DOES NOT SEEM TO EXIST IN POINTS*/
+		.indent {
+        margin-left:4em;
+        text-indent:0;
+    }
+/*    .indent .nm {
+        width:4em;
+        text-indent:0;
+        font-weight:normal;
+        margin-left:-0.4em;
+    } */
+
+ /*   .indent .nm  {
+		color:#000000;
+    } */
+
+
+    /*#### MODIFIED LAYOUT 'indent1' ####*/
+	.indent1 {
+   margin:0em 3px .5em 5em;
+    }
+
+
+
+/* I ADDED THIS IYAR 5777 DZ*/
+
+    .indent1 .nm {
+        width:1.7em;
+        text-indent:0em;
+        text-align:left;
+        margin:0 0 0 2.3em;
+        font-size:1em;
+		}
+
+    .indent1sk .deftext {
+        font-size:1.4em;
+        margin-top:24px;
+    }
+    /*#### MODIFIED LAYOUT 'indent2' ####*/
+/* I REMOVED THE FOLLOWING */
+/* BECAUSE THE LEADING SPACE WAS REMOVED */
+/* FROM AFTER THE PERIOD */
+/*    .indent2 {
+        margin:0 0 0 8em;
+        font-size:1.1em;
+        text-indent:-3.3em;
+    }
+    .indent2 .nmd {
+        font-weight:normal;
+        margin-left:0;
+    }     */
+
+
+
+
+
+/* I ADDED THE FOLLOWING INSTEAD*/
+
+	.indent2 {
+		text-indent:-8.5em; /* moves margin of first line of 1. 2. paragraphs to the left, to match with following lines */
+        margin:0 0 .5em 6.5em; /* last number indents left entire 1., 2. paragraphs, first lines and following lines */
+    }
+
+    .indent2 .nm {
+        width:1.5em; /* space between number and text; less than 1.5 doesn't allow enough room after 2-digit numbered lines */
+        text-indent:20; /* DOESN'T SEEM TO DO ANYTHING! */
+        margin:0 0 0 7em; /* margin from far left at which first line starts */
+        font-size:1em;
+        text-align:left;
+    }
+
+
+
+
+
+
+/* I ADDED THE FOLLOWING */
+
+	.indent3 {
+        text-indent:-13.5em;
+        margin:0 0 .5em 8em;
+    }
+
+
+
+
+/* I ADDED THE FOLLOWING */
+    .indent3 .nm {
+        width:1.5em;  /*less than 1.5 doesn't allow enough room after lines numbered viii. */
+        text-indent:0;
+        text-align:left;
+        font-weight:normal;
+        margin-left:12em;
+        font-size:1em;
+		  }
+
+
+
+
+
+
+
+
+
+    /*#### MODIFIED LAYOUT 'afindent' ####*/
+    .afindent	{
+        margin:24px 3px 0 4em;
+    }
+
+
+    .bbbline 	{
+        font-family:"Times New Roman",serif;
+        text-align:center;
+        font-size:1.4em;
+        font-weight:bold;
+        color:#000080;
+        margin-top:1em;
+		margin-bottom:1em;
+
+	}
+    p.spacer {
+        margin:0;
+        padding:0;
+        min-height:24px
+    }
+
+
+    /*******************************************
+    NOTES
+    *******************************************/
+	.note  {
+	font-style:italic;
+	font-size:12pt;
+	color:#000080;
+	font-family:"Arial, Times New Roman";
+}
+
+	.notewd  {
+	font-style:italic;
+	font-size:13pt;
+	color:#000080;
+	font-weight:bold;
+	font-family:"Arial, Times New Roman";
+	text-transform:uppercase;
+}
+
+	.appendix	{
+	font-style:normal;
+	font-size:14pt;
+	color:#000080;
+	font-weight:normal;
+	font-family:"Arial, Times New Roman";
+	margin-top:3pt;
+	}
+
+
+	tr.appendixheader {
+	margin-top:36pt;
+	text-align:center;
+	font-size:18pt;
+	color:#000080;
+	font-weight:bold;
+	}
+
+	td.appendixtable {
+	margin-top:0pt;
+	text-align:justify;
+	}
+
+
+	.appendixsource  {
+	font-style:normal;
+	font-size:14pt;
+	color:#FF0000;
+	font-weight:normal;
+	font-family:"Arial, Times New Roman";
+	margin-bottom:3.0pt;
+	margin-top:13.0pt;
+	}
+
+	.appendixnum  {
+	color:#000000;
+	font-size:18pt;
+	font-weight:bold;
+	}
+
+
+    /*******************************************
+    LINKS
+    *******************************************/
+
+div#content a {
+        color:blue;
+        text-decoration:none;
+    }
+    div#content a:link { }
+    div#content a:visited {color:#FF0066;}
+    div#content a:hover {text-decoration: underline;}
+    div#content a:active {color:red;}
+
+
+
+
+
+  div.navlinks {
+        margin-top:1em;
+        font-family:"Times New Roman",serif;
+        font-size:1.2em;
+        font-weight:normal;
+        text-align:center;
+    }
+    div.navlinks div.nextdaf {
+        margin-bottom:1em;
+        margin-top:0;
+    }
+    div.navlinks div.nextdaf p {
+        font-family:Arial,sans-serif;
+        font-size:1.0em;
+        font-weight:bold;
+        color:#000080;
+    }
+    div.navlinks p.indexlink {
+        font-weight:bold;
+        line-height: 130%;
+	}
+    div.navlinks p.homepagelink	{
+        text-transform: uppercase;
+    }
+    div.navlinks p.dafhomelink {
+        margin-bottom:1em;
+    }
+    /*******************************************
+    THE RESOURCES SECTION
+    *******************************************/
+    section.resources {
+        font-size:1.0em;
+        text-align:center;
+    }
+        div#resources ul, div#resources ul li {
+        margin:0;
+        padding:0;
+    }
+    section.resources ul li {
+        min-height:3em;
+        vertical-align:top;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    section.resources ul li span { /*the bullet separator*/
+        width:2em;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    section.resources a {
+        color:blue;
+        text-decoration:none;
+    }
+    section.resources a:link { }
+    section.resources a:visited {color:#FF0066;}
+    section.resources a:hover {text-decoration: underline;}
+    section.resources a:active {color:red;}
+    /*******************************************
+    THE FOOTER SECTION
+    *******************************************/
+    footer {
+        margin:0 auto;
+        font-size: 1.2em;
+        font-weight: normal;
+        text-align:center;
+        margin-bottom:3px;
+        margin-top:1.8em;
+        color:#00CCCC
+    }
+    footer ul, footer ul li {
+        margin:0;
+        padding:0;
+    }
+    footer ul li {
+        min-height:2em;
+        vertical-align:top;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    footer ul li span { /*the bullet separator*/
+        width:2em;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    footer a {
+        color: #00CCCC;
+        text-decoration: none;
+        padding:0 5px 0 5px;
+    }
+    footer a:link {}
+    footer a:visited {}
+    footer a:hover {background-color:#00CCCC;color:white;text-decoration:underline;}
+    footer a:active {color:red;}
+    footer a.chomerbivrit {
+        font-weight: bold;
+        margin:0;
+     }
+
+
+
+/*EOF*/

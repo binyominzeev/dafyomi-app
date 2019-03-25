@@ -130,9 +130,13 @@ my $page_per_line=7;
 #my $masechet="midos";
 #my $masechet_title="Midos";
 
-my $msch="nid";
-my $masechet="nidah";
-my $masechet_title="Nidah";
+#my $msch="nid";
+#my $masechet="nidah";
+#my $masechet_title="Nidah";
+
+my $msch="zev";
+my $masechet="zevachim";
+my $masechet_title="Zevachim";
 
 # ======== initialize ========
 

@@ -269,6 +269,14 @@ function nid_page_link (num) {
 	page_link(num);
 }
 
+function zev_page_link (num) {
+	masechet="zevachim/zv";
+	masechet_show="Zevachim";
+	masechet_size=120;
+
+	page_link(num);
+}
+
 
 
 

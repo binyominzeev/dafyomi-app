@@ -1,0 +1,451 @@
+/* v. 76.1*/
+/* v. 75.0  20141204a */
+/*
+    Document   : headfoot_75.css (was headerfooter5.css)
+    Created on : 14-Jul-2014, 22:52
+    Author     : festsoft
+    Description:
+        Renders the HTML5 compatible CSS styles used in
+        header file DafyomiHeader5.txt and
+        footer file DafyomiFooter5.txt
+        (Extracted from backgrnd_c.css)
+    Modifications:
+        header,nav,section,footer changed to div for IE6 compatibility
+        added img to remove border in IE7. Up to 29 July 2014
+    Modified 12 Nov 2014 by DAJ to conform with headerfooter4.css sent by DZ
+        The headerfooter5.css was renamed to headfoot_75.css
+        Global styles added: a links
+        Includes some global styles bbbline, tamline, perekline, hadranline
+    Modified 4 Dec 2014. Rem bott mg add top mg 1.0em bott mg 0
+        to bbbline perekline tamline hadranlinen and add line-height 100%
+*/
+
+    /*
+    As advised by http://codex.wordpress.org/CSS_Fixing_Browser_Bugs
+    Not sure if it makes any difference in this application as
+    we are not uning unicode.
+    */
+    html, body {direction:ltr}
+    /* begin bidirectionality */
+    bdo[dir=ltr] {direction:ltr; unicode-bidi:bidi-override}
+    bdo[dir=rtl] {direction:rtl; unicode-bidi:bidi-override}
+    *[dir=ltr] {direction:ltr; unicode-bidi:embed}
+    *[dir=rtl] {direction:rtl; unicode-bidi:embed}
+    /* block-level in msie4 */
+    address, blockquote, body, dd, div, dl, dt, fieldset,
+    form, frame, frameset, h1, h2, h3, h4, h5, h6, iframe,
+    noscript, noframes, object, ol, p, ul, applet, center,
+    dir, hr, menu, pre, li, table, tr, thead, tbody, tfoot,
+    col, colgroup, td, th, caption
+    {unicode-bidi:embed}
+
+/* 22/12/2015 - MK added styles for #header .askheb p, adjusted ask/askheb font to .9em (instead of .8)
+*/
+
+    /*******************************************
+    GLOBAL STYLES
+    *******************************************/
+    .bbbline, .tamline, .hadranline, .perekline {
+        text-align:center;
+        font-family:"Times New Roman",serif;
+        font-size:1.4em;
+        font-weight:bold;
+        line-height:100% !important;
+        margin-top:1.0em;   /*20141204 margins*/
+        margin-bottom:0;
+    }
+    .bbbline {
+        color:#000080;
+    }
+
+    .tamline	{
+	text-transform:uppercase;
+        color:red;
+    }
+
+    .hadranline	{
+	text-transform:uppercase;
+	color:red;
+    }
+
+    .perekline	{
+	text-transform:uppercase;
+	color:red;
+    }
+/*The following 3 styles added by MK, DZ for preparing MadMimi textfiles*/
+    .newdaftitle {
+    text-align:center;
+    font-family:"Times New Roman",serif;
+    font-weight:bold;
+	font-size:22px;
+	text-align:center;
+	text-transform:uppercase;
+    color:#000080;
+    font-weight:bold;
+    }
+
+p.subjectsource {
+font-weight:bold;
+}
+	.pagespacer {
+  /*      margin:0;
+        padding:0;
+        min-height:700em;
+    line-height:10%  */
+	    margin-bottom:0em;
+        margin-top:8em;
+	}
+
+    /*For Header derived from DafyomiHeader5.txt template*/
+    /*******************************************
+    GENERAL
+    *******************************************/
+    root {
+        display: block;
+    }
+    div.clear {
+        clear:both;
+    }
+    body {
+        margin:0;
+        padding:0;
+        font-family:Arial, sans-serif;
+/*        background-color:#FFFFCC;*/
+        font-size:14px; /*This scales all em dimensions in the page*/
+        /*TEMP: To make body visible:*/
+        /*background-color:#888;*/
+    }
+    div#wrapper {
+     /*   background-color:#FFFFCC;*/
+        padding-right:1em;
+        padding-bottom:1em;
+/*        width:750px;*/
+        margin:0 auto;
+		text-align:center;
+		}
+    /*For IE6 etc */
+    img {
+        border:none;
+    }
+    /*******************************************
+    THE PAGE HEADER SECTION
+    *******************************************/
+    #header {
+        text-align:center;
+    }
+    #header .title,
+    #header .headerdedication,       /*used in placeholder code*/
+    #header .headerspecialsection,   /*used in placeholder code*/
+    #header .headerline,             /*used in placeholder code*/
+    #header .email,
+    #header .roshkollel
+	#header .advert {
+        /*Do not alter these common attributes.
+        Change the element in the list below instead*/
+        margin-top:0;
+        margin-bottom:0;
+        font-weight:normal;
+    }
+    #header .title {
+        font-family:"Times New Roman",serif;
+        font-weight:bold;
+        font-size:1.4em;
+    }
+     #header .headerdedication {      /*used in placeholder code*/
+        margin-top:0.2em;
+        margin-bottom:0.2em;
+        font-family:"Times New Roman",serif;
+        font-weight:bold;
+        color:#808000;
+        text-transform:uppercase;
+        font-size:1.3em;
+    }
+    #header .headerspecialsection {   /*used in placeholder code*/
+        color:#808000;
+        font-size:1.1em;
+    }
+    #header .headerline {             /*used in placeholder code*/
+        margin-top:0.3em;
+        margin-bottom:0.5em;
+        font-style:italic;
+        font-size:1.1em;
+    }
+    #header img.kih_logo {
+        border:0px none;
+    }
+    #header .email {
+        font-style:italic;
+    }
+    #header .roshkollel {
+        margin-top:0.5em;
+        margin-bottom:0.5em;
+        font-style:italic;
+        font-size:1.1em;
+    }
+    #header .ask, .askheb {
+        font-size:.9em;
+        font-weight:bold;
+        text-transform:uppercase;
+        float:right;
+	    margin: -6.5em 1.5em 0 0;
+		}
+
+	#header .ask .askheb img {
+        border:0px none;
+
+    }
+
+	#header .askheb p {
+		margin-top:0em;
+		direction:rtl;
+		text-align:center;
+	}
+
+
+	#header .advert {
+		text-align:center;
+		vertical-align:center;
+	}
+
+	div.horiz_rule {
+		border-top: 1px solid #000000;
+        min-height: 1px;
+        height: 1px;
+        margin:1em auto 0.8em auto;
+        clear:both;
+		width:450px;
+ }
+
+
+
+
+
+/*COPIED FROM OUTLINESTYLES4*/
+div.space {
+clear:both;
+height:1em;
+}
+
+
+
+
+
+    /*******************************************
+    THE NAVIGATION SECTION (with title)
+    *******************************************/
+    #nav {
+        display: inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    #nav .title {
+        font-size:1.6em;
+        color:#000080;
+        font-weight:bold;
+		float:left;
+	    padding: 0.5em 0.5em 0 0.5em;
+/*        padding:0.8em 2em 0 2em; */
+        /*padding:TOP RIGHT BOTTOM LEFT*/
+    }
+    #nav .left {
+        font-family:"Times New Roman",serif;
+        font-size:1.2em;
+        float:left;
+    }
+    #nav .right {
+        font-family:"Times New Roman",serif;
+        font-size:1.2em;
+        float:left;
+    }
+    #nav .left img, #nav .right img {
+        border:0px none;
+    }
+    /*******************************************
+    DEDICATION BOX
+    *******************************************/
+    p.dedicationbox {
+        background-color:#0000ff;
+        color:#FFFFFF;
+        font-size: 1.2em;
+        text-align: center;
+	    margin-top: 40px !important;
+        margin-bottom: 1.2em;
+        margin-left:15%;
+        margin-right:15%;
+        line-height:125%;
+    }
+
+    .dedicationbox br {
+	margin-bottom:0em;
+	}
+
+    /*For footer derived from DafyomiFooter5.txt template*/
+    /*******************************************
+    LINKS
+    *******************************************/
+    div.navlinks {
+        margin-top:1em;
+        font-family:Arial, Helvetica, Times New Roman,serif;
+        font-size:1.2em;
+        font-weight:normal;
+        text-align:center;
+    }
+    div.navlinks div.nextdaf {
+        margin-bottom:1em;
+        margin-top:0;
+    }
+    div.navlinks div.nextdaf p {
+        font-family:Arial,sans-serif;
+        font-size:1.0em;
+        font-weight:bold;
+        color:#000080;
+    }
+    div.navlinks p.indexlink {
+        text-transform: uppercase;
+        font-weight:normal;
+        line-height: 130%;
+	    margin-bottom:2.0em;
+
+	}
+    div.navlinks p.homepagelink	{
+        text-transform: uppercase;
+	    margin-bottom:2.0em;
+		}
+    div.navlinks p.dafhomelink {
+        margin-bottom:1em;
+	    margin-bottom:1.0em;
+		}
+
+
+    /*******************************************
+    THE RESOURCES SECTION
+    *******************************************/
+    .resources {
+        font-size:1.0em;
+        text-align:center;
+    }
+    div#resources ul, div#resources ul li {
+        margin:0;
+        padding:0;
+    }
+    .resources ul li {
+        min-height:3em;
+        vertical-align:top;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+
+	.resources ul li span { /*the bullet separator*/
+        width:2em;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+  	}
+
+	.resources li.liheb { /*the Hebrew names*/
+    font-family:Arial, sans-serif;
+	}
+
+	.resources a {
+        color:blue;
+        text-decoration:none;
+    }
+    .resources a:link { }
+    .resources a:visited {color:#FF0066;}
+    .resources a:hover {text-decoration: underline;}
+    .resources a:active {color:red;}
+    /*******************************************
+    THE FOOTER SECTION
+    *******************************************/
+    #footer {
+        margin:0 auto;
+        font-size: 1.2em;
+        font-weight: normal;
+        text-align:center;
+        margin-bottom:3px;
+        margin-top:1.8em;
+        color:#00CCCC
+    }
+    #footer ul, #footer ul li {
+        margin:0;
+        padding:0;
+    }
+    #footer ul li {
+        min-height:2em;
+        vertical-align:top;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    #footer ul li span { /*the bullet separator*/
+        width:2em;
+        display:inline-block;
+        /* Hack for ie6/7: */
+        zoom:1;
+        *display: inline;
+    }
+    #footer a {
+        color: #00CCCC;
+        text-decoration: none;
+        padding:0 5px 0 5px;
+    }
+    #footer a:link {}
+    #footer a:visited {}
+    #footer a:hover {background-color:#00CCCC;color:white;text-decoration:underline;}
+    #footer a:active {color:red;}
+    #footer a.chomerbivrit {
+        font-weight: normal;
+        margin:0;
+     }
+
+	 /*ADDED BY MK FOR MADMIMI FOOTER*/
+	div.mailfooter {
+	/* width:250px; * TEMPORARILY DELETED BY MK TO TEST */
+	text-align:center;
+	}
+
+/**************************/
+/* RR Responsive retrofit */
+
+/*Clear defaults so padding and margins can be set as required*/
+p { padding: 0 0 0 0; margin: 0 0 0 0; }
+
+#wrapper { /*max-width:750px;*/ width:100% !important; }
+p.dedicationbox { margin: 1.2em 10% 1.2em 10%; }
+#header .ask { margin-right:1em; }
+#content { margin: 0 10% 0 10% !important; }
+#nav .daf, #nav .title {
+    padding: 0.5em 0.5em 0 0.5em;
+    font-size:1.4em;
+}
+
+/* RR render arrow labels invisible */
+#nav .left a, #nav .right a, .navlinks .nextdaf a { color:#FFFFCC !important; }
+.navlinks p.indexlink { margin-top:-1em; }
+
+/* RR Adjustment for small screen*/
+@media screen and (max-width:500px) {
+    #header .ask, #header .askheb {
+        float:none;
+        margin:0 0 0 0;
+        width:100%;
+    }
+    #nav .title, #nav .daf, #nav .subtitle { font-size:1.2em; }
+    #nav .left, #nav .right { font-size: 1.0em; }
+    .bbbline { font-size:1em; }
+    #content { margin-left:0.7em; margin-right:0.7em; }
+}
+
+/* RR so that width can be less */
+div.horiz_rule {
+    max-width:450px;
+}
+/**************************/
+
+
+/*EOF*/

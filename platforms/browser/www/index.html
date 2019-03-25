@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="mobileui/style.css" rel="stylesheet" type="text/css"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta charset="utf-8"/>
+    <meta content="no" name="msapplication-tap-highlight"/>
+    <meta content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" name="viewport"/>
+    <link href="css/index.css" rel="stylesheet" type="text/css"/>
+    
+    <link href="css/headerfooter4.css" rel="stylesheet" type="text/css"/>
+    <link href="css/outlinestyles4.css" rel="stylesheet" type="text/css"/>
+    <link href="css/pointsstyles4.css" rel="stylesheet" type="text/css"/>
+    <title>
+      Apache Cordova
+    </title>
+    </head>
+    <body>
+    <div class="header teal">
+      <button class="left icon ion-navicon" name="button" onclick="openMenu('menuDiscover')">
+      </button>
+      <h1 id="titlebar">
+        Dafyomi Kollel App
+      </h1>
+    </div>
+    
+    <div class="menu blue-500 cover blend-multiply" id="menuDiscover">
+      <div class="list no-border">
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Zera'im
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('berachos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Berachos
+          </h1>
+        </a>
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Moed
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('shabbos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Shabbos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('rhashanah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Rosh Hashanah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('taanis')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Ta'anis
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('megilah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Megilah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('mkatan')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Moed Katan
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('chagigah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Chagigah
+          </h1>
+        </a>
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Nashim
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('yevamos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Yevamos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('kesuvos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Kesuvos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('nedarim')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Nedarim
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('nazir')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Nazir
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('sotah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Sotah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('gitin')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Gitin
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('kidushin')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Kidushin
+          </h1>
+        </a>
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Nezikin
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('bkama')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Bava Kama
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('bmetzia')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Bava Metzia
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('bbasra')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Bava Basra
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('sanhedrin')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Sanhedrin
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('makos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Makos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('shevuos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Shevuos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('azarah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Avodah Zarah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('horayos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Horayos
+          </h1>
+        </a>
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Kodshim
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('zevachim')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Zevachim
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('menachos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Menachos
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('chulin')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Chulin
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('bechoros')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Bechoros
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('erchin')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Erchin
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('temurah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Temurah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('kerisus')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Kerisus
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('meilah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Me'ilah
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('kinim')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Kinim
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('tamid')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Tamid
+          </h1>
+        </a>
+        <a class="item space-small" onclick="openPage('midos')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Midos
+          </h1>
+        </a>
+        <div class="item small-space grey-300 text-grey-700">
+          <p>
+            Taharos
+          </p>
+        </div>
+        <a class="item space-small" onclick="openPage('nidah')">
+          <div class="left">
+            <i class="icon ion-document-text yellow-50">
+            </i>
+          </div>
+          <h1 class="text-yellow-50">
+            Nidah
+          </h1>
+        </a>
+       </div>
+    </div>
+
+  <div class="swiper-container swiper-container-fullscreen swiper-container">
+      <div class="swiper-wrapper">
+          <!-- Add slide 1 -->
+          <div class="swiper-slide">
+            <div id="slide-0" class="daf-slide"></div>
+          </div>
+          <!-- Add slide 3 -->
+          <div class="swiper-slide">
+            <div id="slide-1" class="daf-slide"></div>
+          </div>
+          <!-- Add slide 5 -->
+          <div class="swiper-slide">
+            <div id="slide-2" class="daf-slide"></div>
+          </div>
+      </div>
+  </div>
+
+    <script src="cordova.js" type="text/javascript"></script>
+    <script src="mobileui/mobileui.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "DafyomiEnglish",
+  "short_name": "DafyomiEnglish",
+  "version": "com.dafkollel.dafyomi",
+  "description": "Contents of Dafyomi Kollel Point-By-Point outline.",
+  "author": "Binyomin Szanto-Varnagy",
+  "icons": [],
+  "start_url": "index.html"
+}
