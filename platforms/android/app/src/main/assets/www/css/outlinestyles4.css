@@ -23,7 +23,7 @@
 
 
     /*#### STANDARD PARAGRAPH 'bas' ####*/
-    .bas	{
+    .bas, .firstindent, .secondindent	{
         margin:3px 3px 0 4em;
         font-size:1em;
 
@@ -37,7 +37,7 @@
 
 
     /*Paragraph number*/
-    .nm {
+    .nm, .numt, .numl1, .numl2 {
       /*  font-family:courier,monospace;        */
 		font-family: Arial, "Times New Roman";
 		width:3em;
@@ -65,7 +65,7 @@
 
 
 /*Colors the text before the colon */
-	.cl    {
+	.cl, .desl1, .desl2    {
 	font-weight:bold;
 	color:#FF0000;
 	}
@@ -79,7 +79,7 @@
 	color:#000080;
     }
 
-    .subject	{
+    .subject, .newsubject, .newsubafdaf, .newsubafbbb {
     margin-top:48px;
 	margin-bottom:24px;
 	font-weight:bold;
@@ -129,12 +129,50 @@
 
 
     /*#### MODIFIED LAYOUT 'indent1' ####*/
-	.indent1 {
+	.indent1, .firstindent {
         margin-left:7em;
         text-indent:-7.6em;
     }
+    
+    div.subject {
+    line-height: 150%;
+    text-indent: -4em;
+    }
+    
+    div.subject p {
+    display: inline;
+    }
+    
+    div.indent1 {
+    line-height: 150%;
+    text-indent: -4em;
+    }
+    
+    div.indent1 p {
+    display: inline;
+    }
 
-    .indent1 .nm {
+    div.indent2 {
+    line-height: 150%;
+    text-indent: -4em;
+    margin-left: 3em;
+    }
+    
+    div.indent2 p {
+    display: inline;
+    }
+    
+    div.indent3 {
+    line-height: 150%;
+    text-indent: -4em;
+    margin-left: 2em;
+    }
+    
+    div.indent3 p {
+    display: inline;
+    }
+    
+    .indent1 .nm, .firstindent span {
         width:3em;
         text-indent:0;
         text-align:left;
@@ -168,6 +206,14 @@
 	.indent2 {
         margin-left:10em;
         text-indent:-10.9em;
+    }
+    
+    .secondindent {
+        text-indent:0em;
+    }
+
+    .thirdindent {
+        text-indent:9em;
     }
 
     .indent2 .nm {

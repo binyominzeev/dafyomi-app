@@ -277,7 +277,61 @@ function zev_page_link (num) {
 	page_link(num);
 }
 
+function men_page_link (num) {
+	masechet="menachos/mn";
+	masechet_show="Menachos";
+	masechet_size=110;
 
+	page_link(num);
+}
+
+function chul_page_link (num) {
+	masechet="chulin/ch";
+	masechet_show="Chulin";
+	masechet_size=142;
+
+	page_link(num);
+}
+
+function pes_page_link (num) {
+	masechet="pesachim/ps";
+	masechet_show="Pesachim";
+	masechet_size=121;
+
+	page_link(num);
+}
+
+function shkl_page_link (num) {
+	masechet="shekalim/sk";
+	masechet_show="Shekalim";
+	masechet_size=22;
+
+	page_link(num);
+}
+
+function yom_page_link (num) {
+	masechet="yoma/yo";
+	masechet_show="Yoma";
+	masechet_size=88;
+
+	page_link(num);
+}
+
+function suk_page_link (num) {
+	masechet="sukah/su";
+	masechet_show="Sukah";
+	masechet_size=56;
+
+	page_link(num);
+}
+
+function btz_page_link (num) {
+	masechet="beitzah/bt";
+	masechet_show="Beitzah";
+	masechet_size=40;
+
+	page_link(num);
+}
 
 
 

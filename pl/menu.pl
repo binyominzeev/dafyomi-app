@@ -134,9 +134,41 @@ my $page_per_line=7;
 #my $masechet="nidah";
 #my $masechet_title="Nidah";
 
-my $msch="zev";
-my $masechet="zevachim";
-my $masechet_title="Zevachim";
+#my $msch="zev";
+#my $masechet="zevachim";
+#my $masechet_title="Zevachim";
+
+#my $msch="men";
+#my $masechet="menachos";
+#my $masechet_title="Menachos";
+
+#my $msch="chul";
+#my $masechet="chulin";
+#my $masechet_title="Chulin";
+
+#Peszáchim, Sekálim, Jomá, Szuká, Bécá
+
+#my $msch="pes";
+#my $masechet="pesachim";
+#my $masechet_title="Pesachim";
+
+#my $msch="shkl";
+#my $masechet="shekalim";
+#my $masechet_title="Shekalim";
+
+#my $msch="yom";
+#my $masechet="yoma";
+#my $masechet_title="Yoma";
+
+#my $msch="suk";
+#my $masechet="sukah";
+#my $masechet_title="Sukah";
+
+my $msch="btz";
+my $masechet="beitzah";
+my $masechet_title="Beitzah";
+
+
 
 # ======== initialize ========
 
