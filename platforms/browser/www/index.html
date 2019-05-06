@@ -16,13 +16,205 @@
       Apache Cordova
     </title>
     </head>
-    <body>
-    <div class="header teal">
-      <button class="left icon ion-navicon" name="button" onclick="openMenu('menuDiscover')">
+    <body class="padding grey-100 has-header">
+    <div class="header teal-200" id="header_menu">
+      <button id="menu_button" class="left icon ion-navicon" name="button" onclick="toggle_menu('masechet_menu')">
       </button>
       <h1 id="titlebar">
         Dafyomi Kollel App
       </h1>
+		<div id="masechet_menu" class="teal-200">
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			<button class="teal-500 border-teal radius">Zeraim</button>
+			</div>
+			<div class="col-80 buttons-group full">
+			<button class="teal-400 border-teal radius" onclick="my_open_page('berachos')">Berachos</button>
+			</div>
+			</div>
+			
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			<button class="teal-500 border-teal radius">Moed</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('shabbos')">Shabbos</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('eruvin')">Eruvin</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('pesachim')">Pesachim</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('shekalim')">Shekalim</button>
+			</div>
+			</div>
+			
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('yoma')">Yoma</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('sukah')">Sukah</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('beitzah')">Beitzah</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('rhashanah')">Rosh Hashanah</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('taanis')">Taanis</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('megilah')">Megilah</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('mkatan')">Moed Katan</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('chagigah')">Chagigah</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			<button class="teal-500 border-teal radius">Nashim</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('yevamos')">Yevamos</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('kesuvos')">Kesuvos</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('nedarim')">Nedarim</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('nazir')">Nazir</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('sotah')">Sotah</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('gitin')">Gitin</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('kidushin')">Kidushin</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			<button class="teal-500 border-teal radius">Nezikin</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('bkama')">Bava Kama</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('bmetzia')">Bava Metzia</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('bbasra')">Bava Basra</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('sanhedrin')">Sanhedrin</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full">
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('makos')">Makos</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('shevuos')">Shevuos</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal" onclick="my_open_page('azarah')">Avodah Zarah</button>
+			</div>
+			<div class="col-20 buttons-group full">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('horayos')">Horayos</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full small">
+			<button class="teal-500 border-teal radius">Kodshim</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('zevachim')">Zevachim</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal" onclick="my_open_page('menachos')">Menachos</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal" onclick="my_open_page('chulin')">Chulin</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('bechoros')">Bechoros</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full small">
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('erchin')">Erchin</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal" onclick="my_open_page('temurah')">Temurah</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal" onclick="my_open_page('kerisus')">Kerisus</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('meilah')">Meilah</button>
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full small">
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-left" onclick="my_open_page('kinim')">Kinim</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal" onclick="my_open_page('tamid')">Tamid</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			<button class="teal-400 border-teal radius-right" onclick="my_open_page('midos')">Midos</button>
+			</div>
+			<div class="col-20 buttons-group full small">
+			</div>
+			</div>
+
+			<div class="row">
+			<div class="col-20 buttons-group full small">
+			<button class="teal-500 border-teal radius">Taharos</button>
+			</div>
+			<div class="col-80 buttons-group full small">
+			<button class="teal-400 border-teal radius" onclick="my_open_page('nidah')">Nidah</button>
+			</div>
+			</div>
+
+		</div>
     </div>
     
     <div class="menu blue-500 cover blend-multiply" id="menuDiscover">

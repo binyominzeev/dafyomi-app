@@ -6,8 +6,6 @@ Number.prototype.pad = function(size) {
 
 var current_daf=0;
 var next_slide_num=3;
-var first_daf=0;
-var last_daf=0;
 
 var masechet="";
 var masechet_show="";
@@ -334,18 +332,20 @@ function btz_page_link (num) {
 }
 
 
-
+function page_plus(plus) {
+	var fd=current_daf+plus;
+	var fdp=fd.pad(3);
+	var fdp_url='masechet/'+masechet+'-ps-' + fdp;
+	
+	if (url_exists(fdp_url+'.html')) {
+		return fdp_url;
+	} else {
+		return 0;
+	}
+}
 
 function page_link (num) {
 	current_daf = num;
-
-	first_daf=current_daf-1;
-	last_daf=current_daf+1;
-	
-	var fdp=first_daf.pad(3);
-	var ldp=last_daf.pad(3);
-
-	var padded=current_daf.pad(3);
 	
 	swiper.removeAllSlides();
 	swiper.appendSlide([
@@ -353,14 +353,45 @@ function page_link (num) {
 		'<div class="swiper-slide"><div id="slide-1" class="daf-slide"></div></div>',
 		'<div class="swiper-slide"><div id="slide-2" class="daf-slide"></div></div>',
 	]);
+
+	var padded=current_daf.pad(3);
+	include('slide-1', 'masechet/'+masechet+'-ps-' + padded);
+
 	swiper.slideTo(1, 0, false);
 	
-	include('slide-0', 'masechet/'+masechet+'-ps-' + fdp);
-	include('slide-1', 'masechet/'+masechet+'-ps-' + padded);
-	include('slide-2', 'masechet/'+masechet+'-ps-' + ldp);
-				
-	$('#titlebar').html('Dafyomi – '+masechet_show+' ' + current_daf);
+	var before=page_plus(-1);
+	var after=page_plus(1);
+	
+	if (before) {
+		include('slide-0', before);
+	} else {
+		swiper.removeSlide(0);
+	}
+	
+	if (after) {
+		include('slide-2', after);
+	} else {
+		swiper.removeSlide(2);
+	}
+	
+	$('#titlebar').html(masechet_show+' ' + current_daf);
 	backPage();
+}
+
+function toggle_menu() {
+	$("#masechet_menu").toggle();
+}
+
+function my_open_page(pagename) {
+	toggle_menu();
+	openPage(pagename);
+}
+
+function url_exists(url) {
+    var http = new XMLHttpRequest();
+    http.open('HEAD', url, false);
+    http.send();
+    return http.status!=404;
 }
 
 var swiper=new Swiper('.swiper-container', {
@@ -371,29 +402,25 @@ var swiper=new Swiper('.swiper-container', {
 		var diff=act-prev;
 		
 		current_daf = current_daf + diff;
-
 		var padded=current_daf.pad(3);
+		
+		var before=page_plus(-1);
+		var after=page_plus(1);
 
-		if (swiper.isBeginning && first_daf > 2) {
+		if (swiper.isBeginning && before) {
 			swiper.prependSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
 			
-			first_daf--;
-			var fdp=first_daf.pad(3);
-			
-			include('slide-'+next_slide_num, 'masechet/'+masechet+'-ps-' + fdp);
+			include('slide-'+next_slide_num, before);
 			next_slide_num++;
-		} else if (swiper.isEnd && last_daf < masechet_size) {
+		} else if (swiper.isEnd && after) {
 			swiper.appendSlide('<div class="swiper-slide"><div id="slide-'+next_slide_num+'" class="daf-slide"></div></div>');
 			
-			last_daf++;
-			var ldp=last_daf.pad(3);
-			
-			include('slide-'+next_slide_num, 'masechet/'+masechet+'-ps-' + ldp);
+			include('slide-'+next_slide_num, after);
 			next_slide_num++;
 		}
 
 		if (masechet_show != "") {
-			$('#titlebar').html('Dafyomi – '+masechet_show+' ' + current_daf);
+			$('#titlebar').html(masechet_show+' ' + current_daf);
 		}
 	},
 });

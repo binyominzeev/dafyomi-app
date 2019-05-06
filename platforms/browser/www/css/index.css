@@ -4,3 +4,19 @@
 	overflow-y:scroll;
 	height:100%;
 }
+#header_menu {
+height:60px;
+}
+#titlebar {
+height:42px;
+margin-top:19px;
+}
+#menu_button {
+height:50px;
+}
+#masechet_menu {
+height: 573px;
+margin-top: -31px;
+padding-top: 16px;
+display: none;
+}

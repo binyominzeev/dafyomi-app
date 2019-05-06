@@ -4,7 +4,7 @@ use warnings;
 
 # ========== parameters ==========
 
-my $from_dir="/home/bz/websites/dafyomi/20190318";
+my $from_dir="/home/bz/websites/dafyomi/20190506";
 my $to_dir="/home/bz/cordova/dafyomi-app/www/masechet";
 
 # ========== initialize ==========
