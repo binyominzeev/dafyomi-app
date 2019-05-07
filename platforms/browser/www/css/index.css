@@ -20,3 +20,7 @@ margin-top: -31px;
 padding-top: 16px;
 display: none;
 }
+.buttons-group.row.pages-menu {
+width: 500px;
+margin: 0 auto;
+}

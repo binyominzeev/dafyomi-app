@@ -374,7 +374,9 @@ function page_link (num) {
 		swiper.removeSlide(2);
 	}
 	
-	$('#titlebar').html(masechet_show+' ' + current_daf);
+	var mas_name=masechet.substr(0, masechet.indexOf('/'));
+
+	$('#titlebar').html('<a href="#" onclick="toggle_menu(); my_open_page(\''+mas_name+'\')">'+masechet_show+' ' + current_daf+'</a>');
 	backPage();
 }
 
@@ -420,7 +422,10 @@ var swiper=new Swiper('.swiper-container', {
 		}
 
 		if (masechet_show != "") {
-			$('#titlebar').html(masechet_show+' ' + current_daf);
+			var mas_name=masechet.substr(0, masechet.indexOf('/'));
+
+			$('#titlebar').html('<a href="#" onclick="toggle_menu(); my_open_page(\''+mas_name+'\')">'+masechet_show+' ' + current_daf+'</a>');
+			//$('#titlebar').html(masechet_show+' ' + current_daf);
 		}
 	},
 });

@@ -102,21 +102,21 @@ my $page_per_line=7;
 #my $masechet="bechoros";
 #my $masechet_title="Bechoros";
 
-#my $msch="erch";
-#my $masechet="erchin";
-#my $masechet_title="Erchin";
+my $msch="erch";
+my $masechet="erchin";
+my $masechet_title="Erchin";
 
-#my $msch="tem";
-#my $masechet="temurah";
-#my $masechet_title="Temurah";
+my $msch="tem";
+my $masechet="temurah";
+my $masechet_title="Temurah";
 
-#my $msch="ker";
-#my $masechet="kerisus";
-#my $masechet_title="Kerisus";
+my $msch="ker";
+my $masechet="kerisus";
+my $masechet_title="Kerisus";
 
-#my $msch="mei";
-#my $masechet="meilah";
-#my $masechet_title="Me'ilah";
+my $msch="mei";
+my $masechet="meilah";
+my $masechet_title="Me'ilah";
 
 #my $msch="kin";
 #my $masechet="kinim";
@@ -164,9 +164,9 @@ my $page_per_line=7;
 #my $masechet="sukah";
 #my $masechet_title="Sukah";
 
-my $msch="btz";
-my $masechet="beitzah";
-my $masechet_title="Beitzah";
+#my $msch="btz";
+#my $masechet="beitzah";
+#my $masechet_title="Beitzah";
 
 
 
@@ -199,13 +199,14 @@ print OUT "<div class=\"page\">\n".
 	"</div>\n".
 	"<h1 class=\"title align-center\">$masechet_title</h1>\n".
 	"</div>\n\n".
-	"<div class=\"content has-header\">\n\n";
+	"<div class=\"content has-header\">\n\n<br />";
 
 my $page=2;
 
 for my $line (1..$lines) {
-	print OUT "<p>\n".
-		"<div class=\"buttons-group full\">\n";
+	#print OUT "<p>\n".
+	print OUT "<div class=\"buttons-group row pages-menu\">\n";
+	#	"<div class=\"buttons-group full\">\n";
 	
 	for (1..3) {
 		print OUT menu_button("green", $page++).
@@ -213,13 +214,15 @@ for my $line (1..$lines) {
 	}
 
 	print OUT menu_button("green", $page++).
-		"</div>\n</p>\n";
+		"</div>\n<br />\n";
+		#"</div>\n</p>\n";
 }
 
 # ======== last line ========
 
 print OUT "<p>\n".
-	"<div class=\"buttons-group full\">\n";
+	"<div class=\"buttons-group row pages-menu\">\n";
+#	"<div class=\"buttons-group full\">\n";
 
 my $pairs=int($remains/2);
 my $last=$remains % 2;
@@ -238,10 +241,12 @@ if ($last == 1) {
 }
 
 for (1..$white) {
-	print OUT "<button class=\"white\"></button>\n";
+#	print OUT "<button class=\"white\"></button>\n";
+	print OUT "<div class=\"col\"><button class=\"white border-white radius\"></button></div>\n";
 }
 
-print OUT "</div>\n</p>\n".
+#print OUT "</div>\n</p>\n".
+print OUT "</div>\n\n".
 	"</div>\n</div>";
 close OUT;
 
@@ -249,6 +254,7 @@ close OUT;
 
 sub menu_button {
 	my ($class, $page)=@_;
-	return "<button class=\"$class\" onclick=\"$msch"."_page_link($page)\">$page</button>\n";
+	#return "<button class=\"$class\" onclick=\"$msch"."_page_link($page)\">$page</button>\n";
+	return "<div class=\"col\"><button class=\"$class border-teal radius\" onclick=\"$msch"."_page_link($page)\">$page</button></div>\n";
 }
 
