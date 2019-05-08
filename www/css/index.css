@@ -15,12 +15,22 @@ margin-top:19px;
 height:50px;
 }
 #masechet_menu {
-height: 573px;
 margin-top: -31px;
 padding-top: 16px;
 display: none;
 }
 .buttons-group.row.pages-menu {
-width: 500px;
+width: 444px;
 margin: 0 auto;
+}
+button.menu_header {
+margin-top:-20px;
+margin-bottom:-9px;
+font-size: 13px;
+font-family: serif;
+font-weight: bold;
+}
+#menuDiscover {
+min-width: 370px;
+display:none;
 }
