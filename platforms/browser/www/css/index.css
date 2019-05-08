@@ -1,8 +1,8 @@
 .daf-slide {
-	padding-top:30px;
-	padding-bottom:20px;
-	overflow-y:scroll;
-	height:100%;
+padding-top:30px;
+padding-bottom:20px;
+overflow-y:scroll;
+height:100%;
 }
 #header_menu {
 height:60px;
@@ -33,4 +33,9 @@ font-weight: bold;
 #menuDiscover {
 min-width: 370px;
 display:none;
+}
+.buttons-group.small button, button.small {
+line-height: 17px;
+padding-top: 7px;
+padding-bottom: 7px;
 }

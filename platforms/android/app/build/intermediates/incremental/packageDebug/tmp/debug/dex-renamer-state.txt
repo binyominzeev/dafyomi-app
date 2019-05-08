@@ -1,4 +1,4 @@
-#Wed May 08 22:54:56 CEST 2019
+#Wed May 08 23:06:36 CEST 2019
 base.0=/home/bz/cordova/dafyomi-app/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 path.0=classes.dex
 renamed.0=classes.dex
