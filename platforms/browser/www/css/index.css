@@ -19,10 +19,6 @@ margin-top: -31px;
 padding-top: 16px;
 display: none;
 }
-.buttons-group.row.pages-menu {
-width: 444px;
-margin: 0 auto;
-}
 button.menu_header {
 margin-top:-20px;
 margin-bottom:-9px;
@@ -39,3 +35,14 @@ line-height: 17px;
 padding-top: 7px;
 padding-bottom: 7px;
 }
+.pages-menu {
+width:100%;
+padding-left: 30px;
+padding-right: 30px;
+}
+.page-but {
+padding: 11px;
+float: left;
+width: 50px;s
+}
+
